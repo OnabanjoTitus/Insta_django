@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h1>Instagram</h1>
+    {% for pictures in images %}
+        <img src="{{ pictures.picture.url}}" height="220" width="220">
+        <p>{{ pictures.picture }}</p>
+        <p>{{ pictures.pub_date }}</p>
+        {% endfor %}
+</body>
+</html>
