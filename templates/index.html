@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    #images_for_show{
+        display: flex;
+    }
+</style>
 <body>
         <h1>Instagram</h1>
-    {% for pictures in images %}
-        <img src="{{ pictures.picture.url}}" height="220" width="220">
-        <p>{{ pictures.picture }}</p>
-        <p>{{ pictures.pub_date }}</p>
+
+       <form action="" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+            {{ form.as_p }}
+           <button type="submit">UPLOAD</button>
+{#             <input type="submit" name="submit" id="submit" value="submit"/>#}
+         </form>
+        <div id="images_for_show">
+        {% for image in images %}
+       <div>
+        <img src="{{ image.picture.url}}" height="220" width="220" alt="pics">
+        <p>{{ image.caption}}</p>
+        <p>{{ image.pub_date }}</p>
+       </div>
         {% endfor %}
+        </div>
 </body>
 </html>
