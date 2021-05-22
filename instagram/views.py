@@ -7,7 +7,7 @@ from instagram.models import ImageUpload
 
 def index(request):
     if request.method == 'POST':
-        form = NewImage(request.POST)
+        form = NewImage(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('all')

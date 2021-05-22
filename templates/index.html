@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <style>
-    #images_for_show{
-        display: flex;
+    *{
+        background-color: aqua;
     }
+    #images_for_show{
+        display: inline-flex;
+    }
+
 </style>
 <body>
         <h1>Instagram</h1>
@@ -15,8 +20,7 @@
        <form action="" method="post" enctype="multipart/form-data" >
         {% csrf_token %}
             {{ form.as_p }}
-           <button type="submit">UPLOAD</button>
-{#             <input type="submit" name="submit" id="submit" value="submit"/>#}
+           <button type="submit" style="background-color: peachpuff">UPLOAD</button>
          </form>
         <div id="images_for_show">
         {% for image in images %}
