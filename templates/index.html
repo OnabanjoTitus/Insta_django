@@ -7,7 +7,7 @@
 </head>
 <style>
     *{
-        background-color: aqua;
+        background-color: wheat;
     }
     #images_for_show{
         display: inline-flex;
@@ -27,15 +27,15 @@
         <div id="images_for_show">
         {% for image in images %}
        <div>
-        <img src="{{ image.picture.url}}" height="220" width="220" alt="pics">
-        <p>{{ image.caption}}</p>
-        <p>{{ image.pub_date }}</p>
+            <img src="{{ image.picture.url}}" height="220" width="220" alt="pics">
+            <p>{{ image.caption}}</p>
+            <p>{{ image.pub_date }}</p>
        </div>
         {% endfor %}
-        </div>
+            </div>
         {% else %}
-        <p>You are not logged in.</p>
-        <a href="{% url 'login' %}">Log In|</a>
+            <p>You are not logged in.</p>
+            <a href="{% url 'login' %}">Log In|</a>
             <a href="{% url 'signUp' %}">SignUp</a>
         {% endif %}
 
