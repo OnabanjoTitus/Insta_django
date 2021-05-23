@@ -1,7 +1,12 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from django.urls import reverse_lazy
+from django.views import generic
+from django.views.generic import CreateView
+
 from instagram.models import ImageUpload
 
 
@@ -24,3 +29,9 @@ class NewImage(ModelForm):
     class Meta:
         model = ImageUpload
         fields = "__all__"
+
+
+class UserSignUp(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'signup.html'

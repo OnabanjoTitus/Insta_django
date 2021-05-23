@@ -16,8 +16,10 @@
 </style>
 <body>
         <h1>Instagram</h1>
-
-       <form action="" method="post" enctype="multipart/form-data" >
+        {% if user.is_authenticated %}
+        <p>Welcome {{ user.username }}!</p>
+            <p><a href="{% url 'logout' %}">Log out</a></p>
+            <form action="" method="post" enctype="multipart/form-data" >
         {% csrf_token %}
             {{ form.as_p }}
            <button type="submit" style="background-color: peachpuff">UPLOAD</button>
@@ -31,5 +33,12 @@
        </div>
         {% endfor %}
         </div>
+        {% else %}
+        <p>You are not logged in.</p>
+        <a href="{% url 'login' %}">Log In|</a>
+            <a href="{% url 'signUp' %}">SignUp</a>
+        {% endif %}
+
+
 </body>
 </html>

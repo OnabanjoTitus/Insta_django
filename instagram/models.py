@@ -1,7 +1,9 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
 # Create your models here.
+
 
 class ImageUpload(models.Model):
     picture = models.ImageField()
