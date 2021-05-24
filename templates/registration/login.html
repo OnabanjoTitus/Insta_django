@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
+<style>
+    *{
+        background-color: wheat;
+    }
+</style>
 <body>
 <h3>LOG IN</h3>
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Login</button>
 </form>
+<a href="{% url 'signUp' %}">SignUp</a>
 </body>
 </html>
