@@ -1,3 +1,4 @@
+{% load crispy_forms_filters %}
 {% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,7 @@
 <body>
 <h3>LOG IN</h3>
 <form method="post">{% csrf_token %}
-    {{ form.as_p }}
+    {{ form | crispy }}
     <button type="submit">Login</button>
 </form>
 <a href="{% url 'signUp' %}">SignUp|</a>

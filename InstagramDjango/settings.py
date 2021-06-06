@@ -46,7 +46,14 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+
+    # third party app
+    'crispy_forms',
+    'crispy_forms_primer',
 ]
+
+# Default layout to use with 'crispy_forms'
+CRISPY_TEMPLATE_PACK = 'primer'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend'
