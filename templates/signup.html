@@ -1,3 +1,4 @@
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +18,7 @@
 {{ form.as_p }}
 <button type="submit">Sign Up</button>
 </form>
-  <a href="{% url 'login' %}">Log In</a>
+  <a href="{% url 'login' %}">Log In|</a>
+ <a href="{% provider_login_url 'google' %}">Login With Google</a>
 </body>
 </html>
