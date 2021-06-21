@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import cloudinary
 import dj_database_url
 import django_heroku
 from decouple import config
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     # third party app
     'crispy_forms',
     'crispy_forms_primer',
+    'cloudinary',
 ]
 
 # Default layout to use with 'crispy_forms'
@@ -80,6 +82,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'InstagramDjango.urls'
+cloudinary.config(
+    cloud_name=config("CLOUDINARY_CLOUD_NAME"),
+    api_key=config("CLOUDINARY_API_KEY"),
+    api_secret=config("CLOUDINARY_API_SECRET")
+)
 
 TEMPLATES = [
     {
